@@ -22,9 +22,9 @@ class Saved extends Component {
 				articles: result.data,
 			});
 		}).catch(e => {
-			this.setState({
-				articles: `API call failed: ${e}`
-			});
+			// this.setState({
+			// 	articles: `API call failed: ${e}`
+			// });
 		});
 	}
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Saved from './Saved';
+import Saved from '../Saved/Saved';
 // import {Toast} from 'react-materialize';
 import axios from 'axios';
 import "./Results.css";
@@ -41,9 +41,9 @@ class Results extends Component {
 							<div className="collection-header">
 								<h5>Search Results</h5>
 							</div>
-				<Results 
+				{/* <Results 
 					results={this.state.results}
-				/>
+				/> */}
 
 							
 								{this.props.results.map((result, i) =>
