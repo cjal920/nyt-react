@@ -36,27 +36,22 @@ class Results extends Component {
 		return (
 			<div>
 				<div className="results row">
-					<div className="col s12">
+					<div className="col-sm-12">
 						<div className="collection with-header">
-							<div className="collection-header">
-								<h5>Search Results</h5>
+							<div className="results-header">
+							<em><strong>SEARCH RESULTS</strong></em>
 							</div>
 				{/* <Results 
 					results={this.state.results}
 				/> */}
-
-							
 								{this.props.results.map((result, i) =>
 
-									<div className="collection-item row">
-										<div className="col s6"><a href={result.web_url}><h6>{result.headline.main}</h6></a></div>
-										<div className="col s4"><p>{result.pub_date}</p></div>
-										<div className="col s2"><button className="waves-effect waves-light btn article-save-btn" key={i} onClick={this.handleClick.bind(this, result)}>Save</button></div>
+									<div className="results-item row">
+										<div className="col-sm-6"><a href={result.web_url}><h6>{result.headline.main}</h6></a></div>
+										<div className="col-sm-4"><p>{result.pub_date}</p></div>
+										<div className="col-sm-2"><button className="btn" key={i} onClick={this.handleClick.bind(this, result)}>Save</button></div>
 									</div>
-
 								)}
-							
-
 						</div>
 					</div>
 				</div>

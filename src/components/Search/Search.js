@@ -49,21 +49,24 @@ class Search extends Component {
 				<div className="search row">
 					<form className="col s10 offset-s1" id="article_search" onSubmit={this.nytSearch.bind(this)}>
 						<div className="row center-align">
-							<div className="input-field col s12">
+							<div className="input-field col-sm-12">
 								<input name="topic" id="topic" type="text" value={this.state.topic} onChange={this.handleChange}/>
-								<label for="topic">Topic</label>
+								<label for="topic"><em>Topic</em></label>
 							</div>
-							<div className="input-field col s12 m6">
+							</div>
+							<div className="row center-align">
+							<div className="input-field col-sm-6">
 								<input name="start_year" id="startYear" type="number" value={this.state.startYear} onChange={this.handleChange}/>
-								<label for="start_year">Start Year</label>
+								<label for="start_year"><em>Start Year</em></label>
 							</div>
-							<div className="input-field col s12 m6">
+							<div className="input-field col-sm-6">
 								<input name="end_year" id="endYear" type="number" value={this.state.endYear} onChange={this.handleChange}/>
-								<label for="end_year">End Year</label>
+								<label for="end_year"><em>End Year</em></label>
 							</div>
-							<button className="btn waves-effect waves-light" type="submit" name="action">Search
+							</div>
+
+							<button className="btn" type="submit" name="action">Search
 							</button>
-						</div>
 					</form>
 				</div>
 

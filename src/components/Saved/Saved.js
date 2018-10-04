@@ -89,17 +89,17 @@ class Saved extends Component {
 			<div className="saved row">
 				<div className="col s12">
 					<div className="collection with-header">
-						<div className="collection-header"><h5>Saved Articles</h5></div>
+						<div className="saved-header"><em><strong>SAVED ARTICLES</strong></em></div>
 						{this.state.articles.map((article, i) =>
-							<div className="collection-item row" key={i}>
-								<div className="col s5">
+							<div className="saved-item row" key={i}>
+								<div className="col-sm-5">
 									<a href={article.url}><h6>{article.title}</h6></a>
 								</div>
-								<div className="col s5">
+								<div className="col-sm-5">
 									<p>{article.date}</p>
 								</div>
-								<div className="col s2">
-									<p><button className="waves-effect waves-light btn saved-btn" id={article.id} onClick={this.deleteArticle.bind(this, article)}>Delete Article</button></p>
+								<div className="col-sm-2">
+									<p><button className="btn" id={article.id} onClick={this.deleteArticle.bind(this, article)}>Delete Article</button></p>
 								</div>
 							</div>
 						)}

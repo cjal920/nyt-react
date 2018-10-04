@@ -1,0 +1,9 @@
+.results-header {
+    padding: 40px;
+    font-size: 30px;
+}
+
+.results-item   {
+    font: 20px;
+    font-style: italic;
+}

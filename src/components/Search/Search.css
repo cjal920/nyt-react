@@ -1,3 +1,30 @@
-/* body    {
-    background-color: blue;
-} */
+label   {
+    font-size: 20px;
+    padding: 20px;
+}
+
+input   {
+    border-radius: 10px;
+    border: solid 1px #000000;
+}
+
+#topic  {
+    width: 80%;
+}
+
+.btn  {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 50%;
+    border: solid 1px #000;
+}
+
+.btn:hover    {
+    background: #000;
+    color: #fff;
+}
+
+
+
+
+

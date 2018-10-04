@@ -10,18 +10,17 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		
 	}
 
 	render() {
 		return (
-			<div className="App container">
-				<div className="App-header row center-align">
-					<h2>New York Times Article Search</h2>
-					<p className="App-intro">
-						Search for and annotate articles of interest!
-					</p>
-				</div>
+			<div className="container">
+					<h1>The New York Times</h1>
+					<h2>&#8212; Article Search &#8212;</h2>
+					<div className="App-search">
+						<em><strong>SEARCH FOR AND ANNOTATE ARTICLES OF INTEREST!</strong></em>
+					</div>
+				
 				<Search />
 				
 			</div>
