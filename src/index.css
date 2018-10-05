@@ -1,5 +1,6 @@
 body {
-  background: url("https://pbs.twimg.com/media/DNZ462kXkAAg8Jn.jpg");
+  background: url("https://pbs.twimg.com/media/DNZ462kXkAAg8Jn.jpg") fixed;
+  /* position: absolute; */
   /* background: #000;
   opacity: 25%; */
   /* text-align: center; */
@@ -12,7 +13,9 @@ body {
 }
 
 .container  {
-  background: #fafafa;;
+  /* position: relative; */
+  background: #fff;
+  opacity: 0.9;
   margin: auto;
   margin-top: 5%;
   margin-bottom: 5%;
