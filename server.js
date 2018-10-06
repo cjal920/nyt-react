@@ -7,11 +7,8 @@ var port = 4000;
 var app = express();
 var PORT = process.env.PORT || port;
 
-// Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
-// Database configuration with mongoose
-// Connect to heroku if deployed, or local
 if (process.env.MONGODB_URI) {
 	mongoose.connect(process.env.MONGODB_URI);	
 } else {
@@ -19,17 +16,14 @@ if (process.env.MONGODB_URI) {
 }
 var db = mongoose.connection;
 
-// Show any mongoose errors
 db.on('error', function (error) {
 	console.log('Mongoose Error: ', error);
 });
 
-// Once logged in to the db through mongoose, log a success message
 db.once('open', function () {
 	console.log('Mongoose connection successful.');
 });
 
-// Serve static content for the app from the 'public' directory in the application directory.
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Configure Body-Parser
@@ -42,12 +36,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var Article = require('./models/Article.js');
 var Note = require('./models/Note.js');
 
-// Serve HTML
 app.get('/', function(req, res) {
 	res.sendFile(path.resolve('build/index.html'));
 });
 
-// Get all saved articles with their notes from db
 app.get('/api/article', function (req, res) {
 	Article.find()
 		.populate('noteID')
@@ -60,7 +52,6 @@ app.get('/api/article', function (req, res) {
 		});
 });
 
-// Save article to db
 app.post('/api/article', function (req, res) {
 	var newArticle = new Article({
 		title: req.body.title,
@@ -77,7 +68,6 @@ app.post('/api/article', function (req, res) {
 	});
 });
 
-// Delete article from db
 app.delete('/api/article/:id', function (req, res) {
 	Article.remove({
 		_id: req.params.id
@@ -91,13 +81,11 @@ app.delete('/api/article/:id', function (req, res) {
 	});
 });
 
-// Save note to db - Under Construction
 app.post('/api/note', function (req, res) {
 	var newNote = new Note({
 		text: req.body.text,
 		articleId: req.body.articleId
 	});
-
 	newNote.save(function (error, doc) {
 		if (error) {
 			res.send(error);
@@ -120,7 +108,6 @@ app.post('/api/note', function (req, res) {
 	});
 });
 
-// Delete note from db - Under Construction
 app.delete('/api/note', function (req, res) {
 	Note.remove({
 		_id: req.body.id

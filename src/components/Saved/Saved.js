@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Modal, Button } from 'react-materialize';
 import "./Saved.css";
 
 class Saved extends Component {
@@ -14,7 +13,6 @@ class Saved extends Component {
 		this.handleChange = this.handleChange.bind(this);
 	}
 
-	// Get all saved article data from database
 	apiCall() {
 		axios.get('/api/article', {
 		}).then(result => {
@@ -23,31 +21,26 @@ class Saved extends Component {
 			});
 		}).catch(e => {
 			// this.setState({
-			// 	articles: `API call failed: ${e}`
-			// });
+			// articles: 
 		});
 	}
 
-	// On initial load and prop updates: render saved articles
 	componentDidMount() {
 		this.apiCall();
 	}
 
-	// Update component on note save, or note delete
 	componentDidUpdate(prevProps, prevState) {
 		if (prevProps.response !== this.props.response || prevState.response !== this.state.response) {
 			this.apiCall();
 		}
 	}
 
-	// Captures any change in note input fields, updates state
 	handleChange(event) {
 		let newState = {};
 		newState[event.target.id] = event.target.value;
 		this.setState(newState);
 	}
 
-	// Add note to article - Under construction
 	createNote(e, i, article) {
 		e.preventDefault();
 		let text = this.state.noteText;
@@ -70,7 +63,6 @@ class Saved extends Component {
 		});
 	}
 
-	// Remove article from db - Under Construction
 	deleteArticle(article) {
 		axios.delete('api/article/' + article._id
 		).then(result => {

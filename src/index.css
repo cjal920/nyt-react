@@ -1,19 +1,8 @@
 body {
   background: url("https://pbs.twimg.com/media/DNZ462kXkAAg8Jn.jpg") fixed;
-  /* position: absolute; */
-  /* background: #000;
-  opacity: 25%; */
-  /* text-align: center; */
-  /* margin: 0; */
-  /* padding: 0; */
-  /* font-family: 'Times New Roman', Times, serif; */
-  /* background-image: url("/public/img/The_New_York_Times_logo.png"); */
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
 
 .container  {
-  /* position: relative; */
   background: #fff;
   opacity: 0.9;
   margin: auto;

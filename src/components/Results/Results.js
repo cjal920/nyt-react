@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Saved from '../Saved/Saved';
-// import {Toast} from 'react-materialize';
 import axios from 'axios';
 import "./Results.css";
 
@@ -14,7 +13,6 @@ class Results extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	// Saves article to database on click
 	handleClick(article) {
 		axios.post('/api/article', {
 			title: article.headline.main,
@@ -31,7 +29,6 @@ class Results extends Component {
 		});
 	}
 	
-	// Render results using props results array which was passed in from Search.js - Using map function to iterate over the results
 	render() {
 		return (
 			<div>
@@ -41,11 +38,7 @@ class Results extends Component {
 							<div className="results-header">
 							<em><strong>SEARCH RESULTS</strong></em>
 							</div>
-				{/* <Results 
-					results={this.state.results}
-				/> */}
 								{this.props.results.map((result, i) =>
-
 									<div className="results-item row">
 										<div className="col-sm-6"><a href={result.web_url}><h6>{result.headline.main}</h6></a></div>
 										<div className="col-sm-4"><p>{result.pub_date}</p></div>

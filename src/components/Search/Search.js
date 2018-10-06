@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import "./Search.css";
 import Results from '../Results/Results';
-// import Results from './Results';
 
 class Search extends Component {
-	// Set initial state, and bind correct 'this' to handleChange function
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -16,14 +14,12 @@ class Search extends Component {
 		this.handleChange = this.handleChange.bind(this);
 	}
 
-	// Captures any change in input fields, updates state
 	handleChange(event) {
 		let newState = {};
 		newState[event.target.id] = event.target.value;
 		this.setState(newState);
 	}
 
-	// NYT API call on submit, uses current state to build query URL
 	nytSearch(e) {
 		e.preventDefault();
 		const key = '775f14ef020945c49e51356ce23d9a5c';
